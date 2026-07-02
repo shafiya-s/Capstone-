@@ -1,0 +1,41 @@
+/* App.css - Component-level animation overrides and supplemental styling */
+
+/* Ensure the root fills the page cleanly */
+#root {
+  min-height: 100vh;
+}
+
+/* Smoother card hover lifts */
+.card, .widget, .list-row, .inventory-card {
+  will-change: transform;
+}
+
+/* Scrollbar customization for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-light);
+}
+
+/* Overlay backdrop for mobile sidebar */
+@media (max-width: 768px) {
+  .sidebar.open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 99;
+  }
+}
